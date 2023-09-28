@@ -1,0 +1,9 @@
+.display-bar {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-inline: 1rem;
+    block-size: 4rem;
+    border: 1px solid gray;
+    border-radius: .5rem;
+}
