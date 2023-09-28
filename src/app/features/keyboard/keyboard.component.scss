@@ -1,0 +1,14 @@
+.keyboard__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat( 5, 1fr);
+    gap: .75rem;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.keyboard__key{
+    block-size: 3rem;
+}
