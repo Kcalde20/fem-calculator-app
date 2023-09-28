@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { KeyboardComponent } from './features/keyboard/keyboard.component';
 import { DisplayBarComponent } from './features/display-bar/display-bar.component';
 import { ThemeSelectorComponent } from './features/theme-selector/theme-selector.component';
+import { CalculationsService } from './features/display-bar/calculations.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { ThemeSelectorComponent } from './features/theme-selector/theme-selector
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CalculationsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

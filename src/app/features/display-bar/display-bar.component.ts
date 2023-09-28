@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CalculationsService } from './calculations.service';
 
 @Component({
   selector: 'app-display-bar',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class DisplayBarComponent {
 
+  constructor(private calculationsService: CalculationsService){}
 }
