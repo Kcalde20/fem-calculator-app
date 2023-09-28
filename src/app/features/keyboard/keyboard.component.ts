@@ -15,6 +15,10 @@ export class KeyboardComponent {
     this.calculationsService.addDigit(number);
   }
 
+  deleteDigit(){
+    this.calculationsService.deleteDigit();
+  }
+
   resetCalc(){
     this.calculationsService.reset();
   }
