@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -26,7 +26,7 @@ export class CalculationsService {
 
   deleteDigit(){
     const newValue = parseInt(this.currentInput.value.toString().substring(0, this.currentInput.value.toString().length -1));
-    if(this.currentInput.value >= 1){
+    if(this.currentInput.value.toString().length >=2 ){
       this.currentInput.next(newValue);
     } else {
       this.reset();
