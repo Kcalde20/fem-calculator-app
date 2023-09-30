@@ -16,7 +16,6 @@ export class CalculationsService {
   readonly firstNumber$ = this.firstNumber.asObservable();
   readonly secondNumber$ = this.secondNumber.asObservable();
   readonly operator$ = this.operator.asObservable();
-  readonly result$ = this.result.asObservable();
 
   // Methods
   addDigit(character: string){
@@ -48,7 +47,6 @@ export class CalculationsService {
     this.firstNumber.next('');
     this.secondNumber.next('');
     this.operator.next('');
-    this.result.next(0);
   }
 
 
@@ -61,23 +59,28 @@ export class CalculationsService {
     
     switch(operator) {
       case '+':
-        results = firstNumber + secondNumber;
-        this.result.next(results);
+        results = secondNumber + firstNumber;
+        this.reset();
+        this.firstNumber.next(results.toString());
+
         break;
       
       case '-':
-        results = firstNumber - secondNumber;
-        this.result.next(results);
+        results = secondNumber - firstNumber;
+        this.reset();
+        this.firstNumber.next(results.toString());
         break;
       
       case '*':
-        results = firstNumber * secondNumber;
-        this.result.next(results);
+        results = secondNumber * firstNumber;
+        this.reset();
+        this.firstNumber.next(results.toString());
         break;
       
       case '/':
-        results = firstNumber / secondNumber;
-        this.result.next(results);
+        results = secondNumber / firstNumber;
+        this.reset();
+        this.firstNumber.next(results.toString());
         break;
       
       default:

@@ -12,7 +12,6 @@ export class KeyboardComponent {
   firstNumber = this.calculationsService.firstNumber$;
   secondNumber = this.calculationsService.secondNumber$;
   operator = this.calculationsService.operator$;
-  result = this.calculationsService.result$;
 
   addDigit(character: string) {
     this.calculationsService.addDigit(character);
@@ -24,6 +23,14 @@ export class KeyboardComponent {
 
   deleteDigit(){
     this.calculationsService.deleteDigit();
+  }
+
+  setOperator(operator: string){
+    this.calculationsService.setOperator(operator);
+  }
+
+  calculate(){
+    this.calculationsService.calculate();
   }
 
   reset(){
