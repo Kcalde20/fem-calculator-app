@@ -1,23 +1,25 @@
 <div class="keyboard__grid">
-    <button class="keyboard__key" (click)="addDigit(7)">7</button>
-    <button class="keyboard__key" (click)="addDigit(8)">8</button>
-    <button class="keyboard__key" (click)="addDigit(9)">9</button>
+    <button class="keyboard__key" (click)="addDigit('7')">7</button>
+    <button class="keyboard__key" (click)="addDigit('8')">8</button>
+    <button class="keyboard__key" (click)="addDigit('9')">9</button>
     <button class="keyboard__key" (click)="deleteDigit()">DEL</button>
-    <button class="keyboard__key" (click)="addDigit(4)">4</button>
-    <button class="keyboard__key" (click)="addDigit(5)">5</button>
-    <button class="keyboard__key" (click)="addDigit(6)">6</button>
-    <button class="keyboard__key">+</button>
-    <button class="keyboard__key" (click)="addDigit(1)">1</button>
-    <button class="keyboard__key" (click)="addDigit(2)">2</button>
-    <button class="keyboard__key" (click)="addDigit(3)">3</button>
+    <button class="keyboard__key" (click)="addDigit('4')">4</button>
+    <button class="keyboard__key" (click)="addDigit('5')">5</button>
+    <button class="keyboard__key" (click)="addDigit('6')">6</button>
+    <button class="keyboard__key" (click)="addDigit('+')">+</button>
+    <button class="keyboard__key" (click)="addDigit('1')">1</button>
+    <button class="keyboard__key" (click)="addDigit('2')">2</button>
+    <button class="keyboard__key" (click)="addDigit('3')">3</button>
     <button class="keyboard__key">-</button>
-    <button class="keyboard__key">.</button>
-    <button class="keyboard__key" (click)="addDigit(0)">0</button>
+    <button class="keyboard__key" (click)="addDecimal()">.</button>
+    <button class="keyboard__key" (click)="addDigit('0')">0</button>
     <button class="keyboard__key">/</button>
     <button class="keyboard__key">x</button>
-    <button class="keyboard__key span-2" (click)="resetCalc()">RESET</button>
+    <button class="keyboard__key span-2" (click)="reset()">RESET</button>
     <button class="keyboard__key span-2">=</button>
 </div>
 
-<div *ngIf="currentInput | async as currentInput">currentInput: {{currentInput}}</div>
-<div *ngIf="Total | async as Total">Total: {{Total}}</div>
+<div *ngIf="firstNumber | async as firstNumber">firstNumber: {{firstNumber}}</div>
+<div *ngIf="secondNumber | async as secondNumber">secondNumber: {{secondNumber}}</div>
+<div *ngIf="operator | async as secondNumber">secondNumber: {{operator}}</div>
+<div *ngIf="result | async as total">result: {{result}}</div>

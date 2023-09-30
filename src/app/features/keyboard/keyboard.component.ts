@@ -8,20 +8,28 @@ import { CalculationsService } from '../display-bar/calculations.service';
 })
 export class KeyboardComponent {
 
-  currentInput = this.calculationsService.currentInput$;
-  Total = this.calculationsService.total$;
 
-  addDigit(number: number){
-    this.calculationsService.addDigit(number);
+  firstNumber = this.calculationsService.firstNumber$;
+  secondNumber = this.calculationsService.secondNumber$;
+  operator = this.calculationsService.operator$;
+  result = this.calculationsService.result$;
+
+  addDigit(character: string) {
+    this.calculationsService.addDigit(character);
+  }
+
+  addDecimal(){
+    this.calculationsService.addDecimal();
   }
 
   deleteDigit(){
     this.calculationsService.deleteDigit();
   }
 
-  resetCalc(){
+  reset(){
     this.calculationsService.reset();
   }
+
 
   constructor(private calculationsService: CalculationsService){}
 }
