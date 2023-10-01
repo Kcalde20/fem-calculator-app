@@ -9,6 +9,8 @@ import { CalculationsService } from './calculations.service';
 export class DisplayBarComponent {
 
   displayNumber = this.calculationsService.firstNumber$;
+  secondNumber = this.calculationsService.secondNumber$;
+  operator = this.calculationsService.operator$;
 
   constructor(private calculationsService: CalculationsService){}
 }
