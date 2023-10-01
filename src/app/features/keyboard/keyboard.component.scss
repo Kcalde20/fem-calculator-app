@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat( 5, 1fr);
-    gap: .75rem;
+    gap: .25rem;
 }
 
 .span-2 {
@@ -10,5 +10,26 @@
 }
 
 .keyboard__key{
-    block-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    block-size: 2rem;
+    border: none;
+    border-radius: 4px;
+
+    background-color: var(--color-keys-default-background);
+    box-shadow: 0px 3px 0px var(--color-keys-default-shadow);
+    color: var(--color-keys-default-text);
+
+    &[data-type="accent"]{
+        background-color: var(--color-keys-accent-background);
+        box-shadow: 0px 3px 0px var(--color-keys-accent-shadow);
+        color: var(--color-keys-accent-text);
+    }
+
+    &[data-type="primary"]{
+        background-color: var(--color-keys-primary-background);
+        box-shadow: 0px 3px 0px var(--color-keys-primary-shadow);
+        color: var(--color-keys-primary-text);
+    }
 }
