@@ -1,66 +1,92 @@
  import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, first } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CalculationsService {
 
-
-  // Read Only Subjects
-  private total = new BehaviorSubject<number>(0);
-  private currentInput = new BehaviorSubject<number>(0);
-  private mathSymbol = new BehaviorSubject<string | null>(null);
+  // Subjects
+  private firstNumber = new BehaviorSubject<string>('');
+  private secondNumber = new BehaviorSubject<string>('');
+  private operator = new BehaviorSubject<string>('');
+  private result = new BehaviorSubject<number>(0);
 
   // Observables
-  readonly total$ = this.total.asObservable();
-  readonly currentInput$ = this.currentInput.asObservable();
-  readonly mathSymbol$ = this.mathSymbol.asObservable();
+  readonly firstNumber$ = this.firstNumber.asObservable();
+  readonly secondNumber$ = this.secondNumber.asObservable();
+  readonly operator$ = this.operator.asObservable();
 
-
-  // Methods for Current Input
-  addDigit(number: number){
-    const newValue = parseInt(this.currentInput.value + "" + number);
-    this.currentInput.next(newValue);
+  // Methods
+  addDigit(character: string){
+    const firstNumber = this.firstNumber.value;
+    this.firstNumber.next(firstNumber + character);
   }
 
   deleteDigit(){
-    const newValue = parseInt(this.currentInput.value.toString().substring(0, this.currentInput.value.toString().length -1));
-    if(this.currentInput.value.toString().length >=2 ){
-      this.currentInput.next(newValue);
-    } else {
-      this.reset();
-    };
+    const firstNumber = this.firstNumber.value;
+    this.firstNumber.next(firstNumber.slice(0, -1));
   }
 
   addDecimal(){
-    // grab currentInput
-    // check if decimal exists in currentInput
-    // if no, then add one
-    // if yes, then do nothing
+    const firstNumber = this.firstNumber.value;
+    if(this.firstNumber.value.indexOf(".") == -1) {
+      this.addDigit('.');
+    } else {
+      return;
+    }
+  }
+
+  setOperator(operator: string){
+    this.operator.next(operator);
+    this.secondNumber.next(this.firstNumber.value);
+    this.firstNumber.next('');
   }
 
   reset(){
-    this.currentInput.next(0);
+    this.firstNumber.next('');
+    this.secondNumber.next('');
+    this.operator.next('');
   }
 
-  // Methods for Total
 
-  // Methods for Math Symbol
-  setMathSymbol(symbol: string){
-    // if there is no current value:
+  calculate(){
+    const operator = this.operator.value;
+    const firstNumber = parseFloat(this.firstNumber.value);
+    const secondNumber = parseFloat(this.secondNumber.value);
 
-    // set symbol
-    this.mathSymbol.next(symbol);
-    // store currentInput into value
-    this.total.next(this.currentInput.value);
-    // clear currentInput
-    this.reset();
+    let results;
+    
+    switch(operator) {
+      case '+':
+        results = secondNumber + firstNumber;
+        this.reset();
+        this.firstNumber.next(results.toString());
 
-    // if there is a current value:
-     // complete current calculation
-     // add new symbol
-     // clear currentInput
+        break;
+      
+      case '-':
+        results = secondNumber - firstNumber;
+        this.reset();
+        this.firstNumber.next(results.toString());
+        break;
+      
+      case '*':
+        results = secondNumber * firstNumber;
+        this.reset();
+        this.firstNumber.next(results.toString());
+        break;
+      
+      case '/':
+        results = secondNumber / firstNumber;
+        this.reset();
+        this.firstNumber.next(results.toString());
+        break;
+      
+      default:
+        console.log('Invalid Operator');
+        break;
+    }
   }
 
   constructor() { }
