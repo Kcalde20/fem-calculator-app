@@ -39,8 +39,12 @@ export class CalculationsService {
 
   setOperator(operator: string){
     this.operator.next(operator);
-    this.secondNumber.next(this.firstNumber.value);
-    this.firstNumber.next('');
+    if(this.secondNumber.value == '') {
+      this.secondNumber.next(this.firstNumber.value);
+      this.firstNumber.next('');
+    } else {
+      return;
+    }
   }
 
   reset(){
