@@ -18,7 +18,3 @@
     <button class="keyboard__key span-2" data-type="accent" (click)="reset()">RESET</button>
     <button class="keyboard__key span-2" data-type="primary" (click)="calculate()">=</button>
 </div>
-
-<div *ngIf="firstNumber | async as firstNumber">firstNumber: {{firstNumber}}</div>
-<div *ngIf="secondNumber | async as secondNumber">secondNumber: {{secondNumber}}</div>
-<div *ngIf="operator | async as operator">operator: {{operator}}</div>

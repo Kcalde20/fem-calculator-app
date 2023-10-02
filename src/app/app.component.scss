@@ -1,8 +1,10 @@
 .calc-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    max-inline-size: 30rem;
+    gap: .6rem;
+    max-inline-size: 20rem;
     margin-inline: auto;
-    padding: 1rem;
+    padding: .6rem;
+
+    background-color: var(--color-background-main);
 }

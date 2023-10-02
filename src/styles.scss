@@ -11,8 +11,13 @@
 
 * {
     @include default-font;
+    margin: 0;
+    box-sizing: border-box;
 }
 
+body {
+    background-color: var(--color-background-main);
+}
 
 // theme default
 * {

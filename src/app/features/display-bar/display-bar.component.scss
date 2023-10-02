@@ -3,8 +3,10 @@
     justify-content: end;
     align-items: center;
     gap:.5rem;
-    padding-inline: 1rem;
-    block-size: 4rem;
-    border: 1px solid gray;
-    border-radius: .5rem;
+    padding-inline: .6rem;
+    block-size: 2.5rem;
+    border-radius: 10px;
+
+    background-color: var(--color-background-screen);
+    color: var(--color-text);
 }
