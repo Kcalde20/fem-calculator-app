@@ -8,3 +8,13 @@
 
     background-color: var(--color-background-main);
 }
+
+.calc__header{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.calc__logo {
+    color: var(--color-text);
+}

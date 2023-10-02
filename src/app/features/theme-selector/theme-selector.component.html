@@ -1,10 +1,13 @@
-<div class="theme-toggle">
-    <div id="toggleLabelContainer">
-        <button class="toggle__label" (click)="updateTheme(1)">1</button>
-        <button class="toggle__label" (click)="updateTheme(2)">2</button>
-        <button class="toggle__label" (click)="updateTheme(3)">3</button>
-    </div>
-    <div id="toggleContainer">
-        <div *ngIf="selectedTheme |async as selectedTheme" id="toggle" [ngClass]="'horizTranslate' + selectedTheme"></div>
+<div class="theme-toggle__wrapper">
+    <span class="theme-toggle__label">THEME</span>
+    <div class="theme-toggle">
+        <div id="toggleLabelContainer">
+            <button class="toggle__label" (click)="updateTheme(1)">1</button>
+            <button class="toggle__label" (click)="updateTheme(2)">2</button>
+            <button class="toggle__label" (click)="updateTheme(3)">3</button>
+        </div>
+        <div id="toggleContainer">
+            <div *ngIf="selectedTheme |async as selectedTheme" id="toggle" [ngClass]="'horizTranslate' + selectedTheme"></div>
+        </div>
     </div>
 </div>
