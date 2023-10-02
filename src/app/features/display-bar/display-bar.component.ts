@@ -12,5 +12,7 @@ export class DisplayBarComponent {
   secondNumber = this.calculationsService.secondNumber$;
   operator = this.calculationsService.operator$;
 
+  // TODO: combined observable for completely empty bar
+
   constructor(private calculationsService: CalculationsService){}
 }
