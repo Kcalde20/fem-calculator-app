@@ -19,8 +19,11 @@ export class ThemeSelectorService {
 
   updateTheme(selectedTheme: number) {
     this.theme.next(selectedTheme);
+    document.body.classList.value = '';
+    document.body.classList.add('theme-' + this.theme.value);
     // save into local storage
   }
 
-  constructor() {}
+  constructor() {
+  }
 }
