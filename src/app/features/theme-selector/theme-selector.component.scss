@@ -5,7 +5,7 @@
 }
 
 #toggleContainer{
-    background-color: #222D41; 
+    background-color: var(--color-background-toggle); 
     block-size: .8rem;
     border-radius:99999px;
 }
@@ -13,7 +13,7 @@
 #toggle{
     inline-size:.5rem; 
     block-size: .5rem; 
-    background-color:#DB3D2B; 
+    background-color: var(--color-keys-primary-background); 
     border-radius: 9999px; 
     position: relative; 
     top:5px; 
@@ -21,22 +21,20 @@
 }
 
 #toggle.horizTranslate2 { 
-    -webkit-transition: -webkit-transform 0.1s linear; 
-    -webkit-transform: translateX(27px);
+    transition: transform 0.1s linear;
+    transform: translateX(27px);
 }
 #toggle.horizTranslate3 { 
-    -webkit-transition: -webkit-transform 0.1s linear; 
-    -webkit-transform: translateX(56px);
+    transition: transform 0.1s linear;
+    transform: translateX(56px);
 }
-#toggle.horizTranslate1 { 
-    -webkit-transition: -webkit-transform 0.1s linear; 
-    -webkit-transform: translateX(0px);
+#toggle.horizTranslate1 {
+    transition: transform 0.1s linear;
+    transform: translateX(0px); 
 }
 
 
 #toggleLabelContainer{
-    color:#ffffff;
-    font-family:Arial; 
     text-align:center;
     margin-block-end: -.8rem;
     z-index: 2;
@@ -50,4 +48,6 @@
     font-size: 12px;
     background-color: transparent;
     border: none;
+
+    color: var(--color-text);
 }
