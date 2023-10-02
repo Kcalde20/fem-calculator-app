@@ -1,23 +1,10 @@
 <div class="theme-toggle">
     <div id="toggleLabelContainer">
-        <button class="toggle__label" (click)="selectTheme1()">1</button>
-        <button class="toggle__label" (click)="selectTheme2()">2</button>
-        <button class="toggle__label" (click)="selectTheme3()">3</button>
+        <button class="toggle__label" (click)="updateTheme(1)">1</button>
+        <button class="toggle__label" (click)="updateTheme(2)">2</button>
+        <button class="toggle__label" (click)="updateTheme(3)">3</button>
     </div>
     <div id="toggleContainer">
-        <div id="toggle" [ngClass]="'horizTranslate' + selectedTheme"></div>
+        <div *ngIf="selectedTheme |async as selectedTheme" id="toggle" [ngClass]="'horizTranslate' + selectedTheme"></div>
     </div>
 </div>
-
-<!-- 
-<div id="outerContainer">
-    <div id="buttonContainer">
-        <div class="redButton"></div>
-    </div>
-
-   <div id="legendTextContainer">
-        <div class="legendText" onclick="go_to_1()">1</div>
-        <div class="legendText" onclick="go_to_2()">2</div>
-        <div class="legendText" onclick="go_to_3()">3</div>
-    </div>
-</div> -->

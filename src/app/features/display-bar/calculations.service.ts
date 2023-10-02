@@ -1,5 +1,5 @@
  import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, first } from 'rxjs';
+import { BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,6 @@ export class CalculationsService {
   private firstNumber = new BehaviorSubject<string>('');
   private secondNumber = new BehaviorSubject<string>('');
   private operator = new BehaviorSubject<string>('');
-  private result = new BehaviorSubject<number>(0);
 
   // Observables
   readonly firstNumber$ = this.firstNumber.asObservable();
@@ -52,7 +51,6 @@ export class CalculationsService {
     this.secondNumber.next('');
     this.operator.next('');
   }
-
 
   calculate(){
     const operator = this.operator.value;
