@@ -2,10 +2,11 @@
     display: flex;
     flex-direction: column;
     gap: .6rem;
-    max-inline-size: 20rem;
+    max-inline-size: 15rem;
     margin-inline: auto;
     padding: .6rem;
-
+    justify-content: center;
+    block-size: 100vh;
     background-color: var(--color-background-main);
 }
 
