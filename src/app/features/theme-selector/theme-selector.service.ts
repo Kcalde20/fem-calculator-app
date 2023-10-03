@@ -13,15 +13,10 @@ export class ThemeSelectorService {
   readonly theme$ = this.theme.asObservable();
 
   // Methods
-  getTheme() {
-    // get theme from local storage
-  }
-
   updateTheme(selectedTheme: number) {
     this.theme.next(selectedTheme);
     document.body.classList.value = '';
     document.body.classList.add('theme-' + this.theme.value);
-    // save into local storage
   }
 
   constructor() {
