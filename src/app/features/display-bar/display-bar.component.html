@@ -1,5 +1,5 @@
 <div class="display-bar">
-    <span *ngIf="secondNumber | async as secondNumber">{{secondNumber}} </span>
+    <span *ngIf="secondNumber | async as secondNumber">{{secondNumber | customNumber }} </span>
     <span *ngIf="operator | async as operator">{{operator}}</span>
-    <span *ngIf="displayNumber | async as number">{{number}}</span>
+    <span *ngIf="displayNumber | async as number">{{number | customNumber}}</span>
 </div>

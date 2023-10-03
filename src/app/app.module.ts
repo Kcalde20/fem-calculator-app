@@ -8,13 +8,15 @@ import { DisplayBarComponent } from './features/display-bar/display-bar.componen
 import { ThemeSelectorComponent } from './features/theme-selector/theme-selector.component';
 import { CalculationsService } from './features/display-bar/calculations.service';
 import { ThemeSelectorService } from './features/theme-selector/theme-selector.service';
+import { CustomNumberPipe } from './custom-number.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     KeyboardComponent,
     DisplayBarComponent,
-    ThemeSelectorComponent
+    ThemeSelectorComponent,
+    CustomNumberPipe
   ],
   imports: [
     BrowserModule,
